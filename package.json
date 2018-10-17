@@ -1,14 +1,18 @@
 {
-  "name": "shorter",
+  "name": "MyBooks Backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+	"start" : "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"	
   },
   "author": "Kassiano Resende",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3"
+  },
+  "engines":{
+	"node": "8.11.1"
   }
 }
