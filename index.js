@@ -6,6 +6,14 @@ const bodyParser = require("body-parser");
 //para pegar dados via post
 app.use(bodyParser.urlencoded({extended:true}));
 
+//{nome: kassiano, email: gmail}
+app.use(bodyParser.json());
+
+//nome=kassiano&email=gmail
+app.use(bodyParser.urlencoded({
+	extended:true
+}));
+
 let alunos = [{
 		"id": 1,
 		"nome": "Francisco",
@@ -21,9 +29,8 @@ let alunos = [{
 		"matricula" : 20858301,
 		"cpf" : "832.407.200-70",
 		"notas": [9.0, 5.2, 7.5]
-		}
-    ]
-			  
+		}];
+
 let ultimoId = 2;
 
 app.get("/", (req, res) => {
@@ -40,7 +47,7 @@ app.post("/novo", (req, res) =>{
 	ultimoId++;
 	const id = ultimoId;
 	const nome = req.body.nome;
-	const data_nascimento = req.body.dtnasc;
+	const data_nascimento = req.body.data_nascimento;
 	const matricula = req.body.matricula;
 	const cpf = req.body.cpf;
 	const notas = [];
